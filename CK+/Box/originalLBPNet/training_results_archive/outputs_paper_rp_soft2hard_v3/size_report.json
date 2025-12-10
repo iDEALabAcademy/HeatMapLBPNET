@@ -1,0 +1,401 @@
+{
+  "weight_only_total_bytes": 77112,
+  "full_params_total_bytes": 80238,
+  "rows": [
+    {
+      "name": "stages.0.res_scale",
+      "module_type": "MACFreeBlock",
+      "shape": [],
+      "numel": 1,
+      "bitwidth": 32,
+      "bytes": 4,
+      "source": "default",
+      "group": "full"
+    },
+    {
+      "name": "stages.0.lbp_layer.offsets_raw",
+      "module_type": "LBPLayer",
+      "shape": [
+        2,
+        8,
+        2
+      ],
+      "numel": 32,
+      "bitwidth": 16,
+      "bytes": 64,
+      "source": "policy",
+      "group": "full"
+    },
+    {
+      "name": "stages.0.lbp_layer.alpha",
+      "module_type": "LBPLayer",
+      "shape": [],
+      "numel": 1,
+      "bitwidth": 16,
+      "bytes": 2,
+      "source": "policy",
+      "group": "full"
+    },
+    {
+      "name": "stages.0.lbp_layer.pattern_weights",
+      "module_type": "LBPLayer",
+      "shape": [
+        2,
+        8
+      ],
+      "numel": 16,
+      "bitwidth": 32,
+      "bytes": 64,
+      "source": "default",
+      "group": "full"
+    },
+    {
+      "name": "stages.0.debug_proj.weight",
+      "module_type": "Conv2d",
+      "shape": [
+        39,
+        16,
+        1,
+        1
+      ],
+      "numel": 624,
+      "bitwidth": 32,
+      "bytes": 2496,
+      "source": "default",
+      "group": "weight_only"
+    },
+    {
+      "name": "stages.0.bn.weight",
+      "module_type": "BatchNorm2d",
+      "shape": [
+        39
+      ],
+      "numel": 39,
+      "bitwidth": 32,
+      "bytes": 156,
+      "source": "default",
+      "group": "weight_only"
+    },
+    {
+      "name": "stages.0.bn.bias",
+      "module_type": "BatchNorm2d",
+      "shape": [
+        39
+      ],
+      "numel": 39,
+      "bitwidth": 32,
+      "bytes": 156,
+      "source": "default",
+      "group": "full"
+    },
+    {
+      "name": "stages.0.channel_proj.weight",
+      "module_type": "Conv2d",
+      "shape": [
+        39,
+        1,
+        1,
+        1
+      ],
+      "numel": 39,
+      "bitwidth": 32,
+      "bytes": 156,
+      "source": "default",
+      "group": "weight_only"
+    },
+    {
+      "name": "stages.1.res_scale",
+      "module_type": "MACFreeBlock",
+      "shape": [],
+      "numel": 1,
+      "bitwidth": 32,
+      "bytes": 4,
+      "source": "default",
+      "group": "full"
+    },
+    {
+      "name": "stages.1.lbp_layer.offsets_raw",
+      "module_type": "LBPLayer",
+      "shape": [
+        2,
+        8,
+        2
+      ],
+      "numel": 32,
+      "bitwidth": 16,
+      "bytes": 64,
+      "source": "policy",
+      "group": "full"
+    },
+    {
+      "name": "stages.1.lbp_layer.alpha",
+      "module_type": "LBPLayer",
+      "shape": [],
+      "numel": 1,
+      "bitwidth": 16,
+      "bytes": 2,
+      "source": "policy",
+      "group": "full"
+    },
+    {
+      "name": "stages.1.lbp_layer.pattern_weights",
+      "module_type": "LBPLayer",
+      "shape": [
+        2,
+        8
+      ],
+      "numel": 16,
+      "bitwidth": 32,
+      "bytes": 64,
+      "source": "default",
+      "group": "full"
+    },
+    {
+      "name": "stages.1.debug_proj.weight",
+      "module_type": "Conv2d",
+      "shape": [
+        40,
+        16,
+        1,
+        1
+      ],
+      "numel": 640,
+      "bitwidth": 32,
+      "bytes": 2560,
+      "source": "default",
+      "group": "weight_only"
+    },
+    {
+      "name": "stages.1.bn.weight",
+      "module_type": "BatchNorm2d",
+      "shape": [
+        40
+      ],
+      "numel": 40,
+      "bitwidth": 32,
+      "bytes": 160,
+      "source": "default",
+      "group": "weight_only"
+    },
+    {
+      "name": "stages.1.bn.bias",
+      "module_type": "BatchNorm2d",
+      "shape": [
+        40
+      ],
+      "numel": 40,
+      "bitwidth": 32,
+      "bytes": 160,
+      "source": "default",
+      "group": "full"
+    },
+    {
+      "name": "stages.1.channel_proj.weight",
+      "module_type": "Conv2d",
+      "shape": [
+        40,
+        39,
+        1,
+        1
+      ],
+      "numel": 1560,
+      "bitwidth": 32,
+      "bytes": 6240,
+      "source": "default",
+      "group": "weight_only"
+    },
+    {
+      "name": "stages.2.res_scale",
+      "module_type": "MACFreeBlock",
+      "shape": [],
+      "numel": 1,
+      "bitwidth": 32,
+      "bytes": 4,
+      "source": "default",
+      "group": "full"
+    },
+    {
+      "name": "stages.2.lbp_layer.offsets_raw",
+      "module_type": "LBPLayer",
+      "shape": [
+        2,
+        8,
+        2
+      ],
+      "numel": 32,
+      "bitwidth": 16,
+      "bytes": 64,
+      "source": "policy",
+      "group": "full"
+    },
+    {
+      "name": "stages.2.lbp_layer.alpha",
+      "module_type": "LBPLayer",
+      "shape": [],
+      "numel": 1,
+      "bitwidth": 16,
+      "bytes": 2,
+      "source": "policy",
+      "group": "full"
+    },
+    {
+      "name": "stages.2.lbp_layer.pattern_weights",
+      "module_type": "LBPLayer",
+      "shape": [
+        2,
+        8
+      ],
+      "numel": 16,
+      "bitwidth": 32,
+      "bytes": 64,
+      "source": "default",
+      "group": "full"
+    },
+    {
+      "name": "stages.2.debug_proj.weight",
+      "module_type": "Conv2d",
+      "shape": [
+        80,
+        16,
+        1,
+        1
+      ],
+      "numel": 1280,
+      "bitwidth": 32,
+      "bytes": 5120,
+      "source": "default",
+      "group": "weight_only"
+    },
+    {
+      "name": "stages.2.bn.weight",
+      "module_type": "BatchNorm2d",
+      "shape": [
+        80
+      ],
+      "numel": 80,
+      "bitwidth": 32,
+      "bytes": 320,
+      "source": "default",
+      "group": "weight_only"
+    },
+    {
+      "name": "stages.2.bn.bias",
+      "module_type": "BatchNorm2d",
+      "shape": [
+        80
+      ],
+      "numel": 80,
+      "bitwidth": 32,
+      "bytes": 320,
+      "source": "default",
+      "group": "full"
+    },
+    {
+      "name": "stages.2.channel_proj.weight",
+      "module_type": "Conv2d",
+      "shape": [
+        80,
+        40,
+        1,
+        1
+      ],
+      "numel": 3200,
+      "bitwidth": 32,
+      "bytes": 12800,
+      "source": "default",
+      "group": "weight_only"
+    },
+    {
+      "name": "fc_layers.0.weight",
+      "module_type": "Linear",
+      "shape": [
+        256,
+        80
+      ],
+      "numel": 20480,
+      "bitwidth": 16,
+      "bytes": 40960,
+      "source": "builtin",
+      "group": "weight_only"
+    },
+    {
+      "name": "fc_layers.0.bias",
+      "module_type": "Linear",
+      "shape": [
+        256
+      ],
+      "numel": 256,
+      "bitwidth": 32,
+      "bytes": 1024,
+      "source": "default",
+      "group": "full"
+    },
+    {
+      "name": "fc_layers.1.weight",
+      "module_type": "BatchNorm1d",
+      "shape": [
+        256
+      ],
+      "numel": 256,
+      "bitwidth": 32,
+      "bytes": 1024,
+      "source": "default",
+      "group": "weight_only"
+    },
+    {
+      "name": "fc_layers.1.bias",
+      "module_type": "BatchNorm1d",
+      "shape": [
+        256
+      ],
+      "numel": 256,
+      "bitwidth": 32,
+      "bytes": 1024,
+      "source": "default",
+      "group": "full"
+    },
+    {
+      "name": "fc_layers.3.weight",
+      "module_type": "Linear",
+      "shape": [
+        10,
+        256
+      ],
+      "numel": 2560,
+      "bitwidth": 16,
+      "bytes": 5120,
+      "source": "builtin",
+      "group": "weight_only"
+    },
+    {
+      "name": "fc_layers.3.bias",
+      "module_type": "Linear",
+      "shape": [
+        10
+      ],
+      "numel": 10,
+      "bitwidth": 32,
+      "bytes": 40,
+      "source": "default",
+      "group": "full"
+    }
+  ],
+  "by_type": {
+    "MACFreeBlock": 12,
+    "LBPLayer": 390,
+    "Conv2d": 29372,
+    "BatchNorm2d": 1272,
+    "Linear": 47144,
+    "BatchNorm1d": 2048
+  },
+  "by_bitwidth": {
+    "32": {
+      "params": 8490,
+      "bytes": 33960
+    },
+    "16": {
+      "params": 23139,
+      "bytes": 46278
+    }
+  }
+}

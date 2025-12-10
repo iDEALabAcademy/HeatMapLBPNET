@@ -1,0 +1,4 @@
+experiment,output_dir,test_acc_no_bn,test_loss_no_bn,test_acc_with_bn,test_loss_with_bn,channels,p_schedule,num_patterns
+1,outputs_svhn_cropped_hm_P_decay,N/A,N/A,86.9123,0.8724,"[37,40,80,80,160,160,320,320]","[12,8,6,6,4,4,4,4]",2
+2,outputs_svhn_cropped_hm_P_decay_less_channel,N/A,N/A,87.4309,0.8570,"[37,40,80,80,100,100,120,120]","[12,8,6,6,4,4,4,4]",2
+3,outputs_svhn_cropped_hm_P_less_channel,N/A,N/A,87.6344,0.8531,"[37,40,80,80,100,100,120,120]","[12,8,8,8,8,8,8,8]",2

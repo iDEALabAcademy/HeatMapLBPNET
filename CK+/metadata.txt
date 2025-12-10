@@ -1,0 +1,11 @@
+==================================================
+  anger          :  135 images
+  contempt       :   54 images
+  disgust        :  177 images
+  fear           :   75 images
+  happy          :  207 images
+  sadness        :   84 images
+  surprise       :  249 images
+==================================================
+  Total:           981 images
+  Classes:           7

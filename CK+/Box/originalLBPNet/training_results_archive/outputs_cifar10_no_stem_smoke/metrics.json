@@ -1,0 +1,1 @@
+{"ACC_SOFT_TEST": 10.29, "ACC_HARD_BN_CALIB_TEST": 10.08, "params": 72704, "gops_soft": {"stem_conv": 0.0, "rp_fusion": 0.018292736, "lbp": 8.6016e-05, "linear": 0.000141312, "total": 0.018520064}, "gops_hard": {"stem_conv": 0.0, "rp_fusion": 0.018292736, "lbp": 8.6016e-05, "linear": 0.000141312, "total": 0.018520064}}

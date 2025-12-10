@@ -1,0 +1,31 @@
+defaults:
+  bitwidth: 32
+  include: true
+
+rules:
+  # First conv (example) 8-bit
+  - name_regex: '^.*(^|\.)conv(1|0)\.(weight|bias)$'
+    bitwidth: 8
+    include: true
+
+  # Classifier / head 16-bit
+  - name_regex: '^.*(classifier|fc|head|fc_layers)\.(weight|bias)$'
+    bitwidth: 16
+    include: true
+
+  # RP layers (fallback 4-bit), prefer module attribute n_bits_per_out when available
+  - module_type: 'RandomProjection|RPLayer|RPFusionPaper|RP.*'
+    bitwidth: 4
+    include: true
+    prefer_module_attr: ["n_bits_per_out", "w_bit", "bitwidth"]
+
+  # LBP scalars 16-bit
+  - name_regex: '(alpha|offset|threshold)'
+    bitwidth: 16
+    include: true
+
+  # Exclude buffers
+  - name_regex: 'running_(mean|var)'
+    include: false
+
+

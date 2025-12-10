@@ -1,0 +1,145 @@
+model: lbpnet_rp
+image_size: 28
+
+reproducibility:
+  seed: 42
+  deterministic: true
+  benchmark: false
+
+data:
+  val_size: 0
+  split_seed: 42
+  stratified: true
+  num_workers: 4
+  pin_memory: true
+
+lbp_layer:
+  num_patterns: 2
+  num_points: 8
+  window: 3
+  share_across_channels: true
+  mode: bits
+  alpha_init: 0.2
+  learn_alpha: true
+  offset_init_std: 0.2
+
+blocks:
+  stages: 3
+  channels_per_stage: [39, 40, 80]
+  downsample_at: [1, 2]
+  fusion_type: rp_paper
+  rp_config:
+    fusion_type: rp_paper
+    n_bits_per_out: 8
+    seed: 42
+    threshold: null
+    tau: 3.0
+    use_ste: true
+
+head:
+  hidden: 256
+  dropout_rate: 0.0
+  num_classes: 10
+  use_bn: true
+
+training:
+  epochs: 260
+  batch_size: 256
+  lr: 1.0e-3
+  weight_decay: 3.0e-4
+  lr_scheduler: cosine
+  warmup_epochs: 5
+  patience: 9999
+  min_delta: 5.0e-4
+  label_smoothing: 0.03
+  eta_min: 1.0e-6
+
+ste:
+  use_ste_bits: true
+  use_ste_gates: true
+  lbp_ste_scale: 6.0
+  gate_ste_scale: 8.0
+
+optim:
+  type: AdamW
+  lr: 1.0e-3
+  weight_decay: 2.0e-4
+  lr_mult:
+    gates: 2.0
+    offsets: 2.0
+    base: 1.0
+
+temp_schedule:
+  alpha:
+    start: 1.5
+    end: 0.08
+    mode: cosine
+  tau:
+    start: 3.0
+    end: 0.85
+    mode: cosine
+
+freeze_schedule:
+  freeze_offsets_epochs: 8
+  freeze_gates_extra_epochs: 4
+  freeze_gate_epochs: 10
+
+stability:
+  collapse_guard: true
+  collapse_window: 5
+  acc_drop_thr: 0.05
+  alive_upper: 0.35
+
+ema:
+  enable: true
+  decay: 0.999
+
+augment:
+  enable: true
+  crop_pad: 2
+  rotation: 2
+
+optimizer_groups:
+  lbp_offsets:
+    lr_multiplier: 5.0
+    weight_decay_multiplier: 0.0
+  lbp_alpha:
+    lr_multiplier: 1.0
+    weight_decay_multiplier: 0.0
+  rp_gates:
+    lr_multiplier: 3.0
+    weight_decay_multiplier: 0.0
+  classification_head:
+    lr_multiplier: 0.7
+    weight_decay_multiplier: 1.0
+
+gradient_clipping:
+  enabled: true
+  method: norm
+  max_norm: 1.0
+
+amp: true
+num_workers: 4
+pin_memory: true
+
+hard_finetune:
+  enable: true
+  start_epoch: 220
+  lr_mult: 0.1
+  hard_forward_bits: true
+  hard_forward_gates: true
+  bn_mode: track
+  bn_recal_batches: 400
+
+rp_layer:
+  gate_logits_init: 0.3
+
+alive_ratio_reg:
+  enable: true
+  target: 0.5
+  weight: 1.0e-3
+
+gate_margin:
+  enable: true
+  margin: 1.0
+  weight: 1.0e-3

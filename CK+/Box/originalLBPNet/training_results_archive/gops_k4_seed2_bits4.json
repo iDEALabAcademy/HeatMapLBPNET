@@ -1,0 +1,12 @@
+{
+  "timestamp": "2025-09-08 12:08:25",
+  "preset": "paper_mnist_rp_full",
+  "seed": 2,
+  "n_bits": 4,
+  "gops": 0.000366912,
+  "ops_breakdown": {
+    "cmps": 105840,
+    "adds": 261072,
+    "muls": 0
+  }
+}

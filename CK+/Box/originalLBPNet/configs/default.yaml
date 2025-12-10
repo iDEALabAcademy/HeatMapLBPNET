@@ -1,0 +1,73 @@
+# Default LBPNet Configuration
+# 默认LBPNet配置
+
+model: 'lbpnet_rp'
+
+data:
+  train_ratio: 0.85
+  val_ratio: 0.15
+  seed: 42
+
+lbp_layer:
+  num_patterns: 1
+  num_points: 8
+  window: 5
+  share_across_channels: true
+  mode: 'bits'
+  alpha_init: 0.2
+  learn_alpha: true
+  offset_init_std: 0.8
+
+blocks:
+  stages: 3
+  channels_per_stage: [32, 64, 128]
+  downsample_at: [1, 2]
+  fusion_type: 'rp'
+  rp_config:
+    n_bits_per_out: 4
+    seed: 42
+
+head:
+  hidden: 512
+  dropout_rate: 0.2
+  num_classes: 10
+
+training:
+  epochs: 100
+  batch_size: 64
+  lr: 0.0001
+  weight_decay: 0.00001
+  lr_scheduler: 'cosine'
+  patience: 15
+  min_delta: 0.0005
+
+optimizer_groups:
+  lbp_offsets:
+    lr_multiplier: 2.0
+    weight_decay_multiplier: 0.0
+  lbp_alpha:
+    lr_multiplier: 1.0
+    weight_decay_multiplier: 0.0
+  classification_head:
+    lr_multiplier: 0.5
+    weight_decay_multiplier: 1.0
+
+alpha_schedule:
+  alpha_init: 0.2
+  alpha_final: 0.02
+  alpha_warmup_epochs: 25
+  alpha_anneal_epochs: 75
+
+gradient_clipping:
+  enabled: true
+  method: 'norm'
+  max_norm: 0.3
+
+amp: true
+num_workers: 4
+pin_memory: true
+
+reproducibility:
+  seed: 42
+  deterministic: true
+  benchmark: false

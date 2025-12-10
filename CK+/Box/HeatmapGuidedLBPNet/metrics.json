@@ -1,0 +1,11 @@
+{
+  "dataset": "MNIST",
+  "preset": "paper_mnist_1x1",
+  "accuracy_%": 98.37777777777778,
+  "error_rate_%": 1.62222222222222,
+  "num_params": 151008,
+  "model_size_mb_fp32_est": 0.5760498046875,
+  "checkpoint_size_mb": 1.669203758239746,
+  "latency_ms_gpu": 16.467885971069336,
+  "throughput_ips_gpu": 7772.703808179719
+}

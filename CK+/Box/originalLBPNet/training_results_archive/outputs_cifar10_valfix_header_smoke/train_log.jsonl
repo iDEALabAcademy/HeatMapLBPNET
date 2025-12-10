@@ -1,0 +1,2 @@
+{"meta": "model_info", "params": 263360, "gops_soft": 0.06484992, "gops_hard": 0.064841762, "gops_soft_actual": 0.000196776, "gops_hard_actual": 0.000163304, "alive_mean": 0.7081560293833414}
+{"epoch": 1, "train_loss": 1.745387325583564, "train_top1": 42.72222222222222, "val_loss": 1.3443124767303467, "val_top1": 52.65999992675781, "val_top1_raw": 52.65999992675781, "val_top1_ema": 10.139999987792969, "lr": 0.0002, "tau": 3.0, "alpha_mean": 0.20191903412342072, "alive": 0.6616955399513245}

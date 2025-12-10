@@ -1,0 +1,31 @@
+name,module_type,shape,numel,bitwidth,bytes,source,group
+stages.0.res_scale,MACFreeBlock,(),1,32,4,default,full
+stages.0.lbp_layer.offsets_raw,LBPLayer,"(2, 8, 2)",32,16,64,policy,full
+stages.0.lbp_layer.alpha,LBPLayer,(),1,16,2,policy,full
+stages.0.lbp_layer.pattern_weights,LBPLayer,"(2, 8)",16,32,64,default,full
+stages.0.debug_proj.weight,Conv2d,"(39, 16, 1, 1)",624,32,2496,default,weight_only
+stages.0.bn.weight,BatchNorm2d,"(39,)",39,32,156,default,weight_only
+stages.0.bn.bias,BatchNorm2d,"(39,)",39,32,156,default,full
+stages.0.channel_proj.weight,Conv2d,"(39, 1, 1, 1)",39,32,156,default,weight_only
+stages.1.res_scale,MACFreeBlock,(),1,32,4,default,full
+stages.1.lbp_layer.offsets_raw,LBPLayer,"(2, 8, 2)",32,16,64,policy,full
+stages.1.lbp_layer.alpha,LBPLayer,(),1,16,2,policy,full
+stages.1.lbp_layer.pattern_weights,LBPLayer,"(2, 8)",16,32,64,default,full
+stages.1.debug_proj.weight,Conv2d,"(40, 16, 1, 1)",640,32,2560,default,weight_only
+stages.1.bn.weight,BatchNorm2d,"(40,)",40,32,160,default,weight_only
+stages.1.bn.bias,BatchNorm2d,"(40,)",40,32,160,default,full
+stages.1.channel_proj.weight,Conv2d,"(40, 39, 1, 1)",1560,32,6240,default,weight_only
+stages.2.res_scale,MACFreeBlock,(),1,32,4,default,full
+stages.2.lbp_layer.offsets_raw,LBPLayer,"(2, 8, 2)",32,16,64,policy,full
+stages.2.lbp_layer.alpha,LBPLayer,(),1,16,2,policy,full
+stages.2.lbp_layer.pattern_weights,LBPLayer,"(2, 8)",16,32,64,default,full
+stages.2.debug_proj.weight,Conv2d,"(80, 16, 1, 1)",1280,32,5120,default,weight_only
+stages.2.bn.weight,BatchNorm2d,"(80,)",80,32,320,default,weight_only
+stages.2.bn.bias,BatchNorm2d,"(80,)",80,32,320,default,full
+stages.2.channel_proj.weight,Conv2d,"(80, 40, 1, 1)",3200,32,12800,default,weight_only
+fc_layers.0.weight,Linear,"(256, 80)",20480,16,40960,builtin,weight_only
+fc_layers.0.bias,Linear,"(256,)",256,32,1024,default,full
+fc_layers.1.weight,BatchNorm1d,"(256,)",256,32,1024,default,weight_only
+fc_layers.1.bias,BatchNorm1d,"(256,)",256,32,1024,default,full
+fc_layers.3.weight,Linear,"(10, 256)",2560,16,5120,builtin,weight_only
+fc_layers.3.bias,Linear,"(10,)",10,32,40,default,full
