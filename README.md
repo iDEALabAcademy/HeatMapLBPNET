@@ -59,10 +59,8 @@ Simply open the training file you want to use and adjust the configuration secti
 
 3. Adjust configurations within the training files as needed for your specific requirements.
 
-## Requirements
-
-Check the `requirements.txt` file in each folder for the necessary dependencies.
 
 ## Dataset
 
 This code is designed for the CK+ dataset. For other datasets, modifications will be required in the data loading and preprocessing pipeline.
+You can download CK+ dataset by running CK+\getData.py & CK+\data_loader.py or using Kaggle: https://www.kaggle.com/datasets/davilsena/ckdataset
