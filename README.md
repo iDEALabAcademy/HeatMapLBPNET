@@ -25,6 +25,8 @@ In each folder, you'll find the main training scripts:
 - `train_original_model.py` - Train on the full-size images
 - `train_original_model_cropped.py` - Train on cropped images
 
+Heatmap version is only meant to run on cropped inputs so you will not find `train_original_model.py` inside HeatmapGuidedLBPNet/.
+
 ### Configuration
 
 Both training scripts contain configuration parameters that can be adjusted as needed. You can modify:
