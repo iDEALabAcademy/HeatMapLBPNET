@@ -27,6 +27,9 @@ In each folder, you'll find the main training scripts:
 
 Heatmap version is only meant to run on cropped inputs so you will not find `train_original_model.py` inside HeatmapGuidedLBPNet/.
 
+
+You can find LBPNet blocks and RP fusion implementation inside lbpnet/.
+
 ### Configuration
 
 Both training scripts contain configuration parameters that can be adjusted as needed. You can modify:
